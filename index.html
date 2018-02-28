@@ -11,8 +11,9 @@
 </header>
 <body>
 
-  <div class="sidebar">
+  <div id="mySidenav" class="sidebar">
     <ul>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <li><a href="dnd.html">Home</a></li>
       <li><a href="getting_started.html">Getting Started</a></li>
       <li><a href="characters.html">Characters</a></li>
@@ -20,6 +21,11 @@
       <li><a href="faqs.html">FAQs</a></li>
     </ul>
   </div>
+
+<span onclick="openNav()">open</span>
+
+<button class="button" onclick="openNav()">&#9776; Menu</button>
+
   <h1>
       Welcome Traveller
   </h1>
@@ -32,5 +38,16 @@
     Dungeons and Dragons, D&D, is a rollplaing game originally designed by Gary Gygax and Dave Arneson back in 1974. Since then, there have been many
     itterations, the most often played are the 3.5 and 5th editions
   </p>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
 </body>
 </html>
