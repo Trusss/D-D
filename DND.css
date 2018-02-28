@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Bitter");
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond");
+
+
+body{
+  background: black;
+}
+
+.sidebar{
+  background: #404040;
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  top:0;
+  left:0;
+  color: #404040;
+}
+
+li{
+  margin: 15px 5px 15px 10px;
+  font-size: 20px;
+  font-family: 'Cormorant Garamond';
+  text-decoration: none;
+}
+
+.sidebar a:hover{
+  color:orange;
+}
+
+.sidebar a{
+  color: white;
+  padding-top: 20px;
+  text-decoration: none;
+  display: block;
+}
+header{
+  background:-webkit-linear-gradient(black, white);
+  height: 100px;
+  font-size: 27px;
+}
+h1{
+  margin-left: 230px;
+  color:white;
+  font-family: 'Cormorant Garamond';
+}
+p{
+  font-family: 'Cormorant Garamond';
+  color: white;
+  margin-left: 230px;
+  margin-right: 100px;
+  font-size: 20px;
+}
