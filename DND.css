@@ -27,6 +27,7 @@ body{
   font-size: 25px;
   text-decoration: none;
   border: none;
+  margin-left: 50px;
 }
 
 li{
@@ -38,7 +39,7 @@ li{
 }
 
 .sidebar a:hover{
-  color:orange;
+  color:black;
 }
 
 .sidebar a{
@@ -51,7 +52,7 @@ li{
 
 .sidebar .closebtn{
     position: absolute;
-    top: 0;
+    top: 110px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;

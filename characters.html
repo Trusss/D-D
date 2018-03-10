@@ -2,24 +2,46 @@
 <html>
 <head>
   <link href="DND.css" rel="stylesheet" type="text/css">
-  <header class:head>
-    <h1>
-      DND 101
-    </h1>
-  </header>
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
 </head>
-<body>
+<header class:head>
   <h1>
-    Characters
+    DND 101
   </h1>
+</header>
+<body>
 
-  <div class="sidebar">
+  <div id="mySidenav" class="sidebar">
     <ul>
-      <li><a href="dnd.html">Home</a></li>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="getting_started.html">Getting Started</a></li>
       <li><a href="characters.html">Characters</a></li>
       <li><a href="for_dms.html">For DMs</a></li>
       <li><a href="faqs.html">FAQs</a></li>
-      <li><a href="getting_started.html">Getting Started</a></li>
     </ul>
   </div>
+
+<span onclick="openNav()">open</span>
+
+<button class="button" onclick="openNav()">&#9776; Menu</button>
+
+  <h1>
+      Characters
+  </h1>
+  <p>
+      Charater content
+  </p>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
 </body>
+</html>
