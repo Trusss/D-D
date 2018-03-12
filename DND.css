@@ -6,9 +6,28 @@ body{
   background: black;
 }
 
+.logo{
+  position: absolute;
+  top:50px;
+  left:20px;
+  width: 160px;
+}
+
+.dragon{
+  width: 250px;
+  border-radius: 12px;
+  margin-right: 100px;
+  margin left: 10px;
+  float: right;
+}
+
+.italic{
+  font-style: italic;
+}
+
 .sidebar{
   background: #404040;
-  position: fixed;
+  position: absolute;
   width: 200px;
   height: 100%;
   top:0;
@@ -17,17 +36,20 @@ body{
   transition: 0.5s;
   overflow-x: hidden;
   z-index: 1;
-  padding-top: 125px;
+  padding-top: 200px;
+  box-shadow: 3px 0px 10px #717272;
 }
 
 .button{
   color:white;
   font-family: 'Cormorant Garamond';
-  background-color: black;
+  background-color: transparent;
   font-size: 25px;
   text-decoration: none;
   border: none;
-  margin-left: 50px;
+  margin-top: 15px;
+  position: absolute;
+  z-index: 500;
 }
 
 li{
@@ -44,7 +66,7 @@ li{
 
 .sidebar a{
   color: white;
-  padding-top: 20px;
+  padding-top: 15px;
   text-decoration: none;
   display: block;
   transition: 0.3s;
@@ -52,7 +74,7 @@ li{
 
 .sidebar .closebtn{
     position: absolute;
-    top: 110px;
+    top: 136px;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
@@ -62,6 +84,7 @@ header{
   background:-webkit-linear-gradient(black, white);
   height: 100px;
   font-size: 27px;
+
 }
 h1{
   margin-left: 230px;
