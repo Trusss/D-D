@@ -91,10 +91,20 @@ h1{
   color:white;
   font-family: 'Cormorant Garamond';
 }
+h2{
+  margin-left: 230px;
+  margin-top: 50px;
+  color:white;
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+}
 p{
   font-family: 'Cormorant Garamond';
   color: white;
   margin-left: 230px;
   margin-right: 100px;
   font-size: 20px;
+}
+.link{
+  color: grey;
 }
