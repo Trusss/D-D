@@ -4,6 +4,7 @@
 
 body{
   background: black;
+  padding-bottom: 20px;
 }
 
 .logo{
@@ -27,7 +28,7 @@ body{
 
 .sidebar{
   background: #404040;
-  position: absolute;
+  position: fixed;
   width: 200px;
   height: 100%;
   top:0;
@@ -48,7 +49,7 @@ body{
   text-decoration: none;
   border: none;
   margin-top: 15px;
-  position: absolute;
+  position: fixed;
   z-index: 500;
 }
 
