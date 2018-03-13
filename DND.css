@@ -13,6 +13,9 @@ body{
   left:20px;
   width: 160px;
 }
+form{
+  color:white;
+}
 
 .dragon{
   width: 250px;
@@ -109,3 +112,38 @@ p{
 .link{
   color: grey;
 }
+
+input[type=text], select, textarea {
+
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 400px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    display: block;
+}
+
+.contacts{
+  margin-left: 220px;
+  background-color: #2d2d2d;
+  width: 420px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input[type=submit] {
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond';
+    font-size: 18px;
+}
+
+input[type=submit]:hover {
+    background-color: #e0e1e2;
