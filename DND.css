@@ -13,6 +13,7 @@ body{
   left:20px;
   width: 160px;
 }
+
 form{
   color:white;
 }
@@ -25,8 +26,67 @@ form{
   float: right;
 }
 
+.fighter{
+  float:right;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  height: 170px;
+  margin-right: 50px;
+}
+
+.container:hover .overlay{
+  opacity: 0.5;
+}
+
+.text {
+  top: 75px;
+  left: 25px;
+  position: absolute;
+  opacity: 1;
+  font-weight: bold;
+  font-family: 'Cormorant Garamond';
+}
+
+.overlay{
+  position: absolute;
+  top: 328px;
+  left: 1211px;
+  width: 250px;
+  height: 170px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.barb{
+  float:left;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  margin-right: 50px;
+  margin-left: 200px;
+  margin-top: 70px;
+}
+
+.bard{
+  float:right;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  margin-right: 50px;
+}
+
 .italic{
   font-style: italic;
+}
+
+.bold{
+  font-weight: bold;
 }
 
 .sidebar{
@@ -60,7 +120,7 @@ li{
   margin: 15px 5px 15px 10px;
   font-size: 20px;
   font-family: 'Cormorant Garamond';
-  text-decoration: none;
+  text-decoration: none
   display: block;
 }
 
@@ -111,6 +171,12 @@ p{
 }
 .link{
   color: grey;
+}
+
+ol{
+  color: white;
+  font-family: 'Cormorant Garamond';
+  margin-left: 200px;
 }
 
 input[type=text], select, textarea {
