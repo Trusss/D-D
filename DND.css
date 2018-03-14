@@ -37,7 +37,7 @@ form{
 }
 
 .container:hover .overlay{
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .text {
@@ -45,8 +45,6 @@ form{
   left: 25px;
   position: absolute;
   opacity: 1;
-  font-weight: bold;
-  font-family: 'Cormorant Garamond';
 }
 
 .overlay{
