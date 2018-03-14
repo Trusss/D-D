@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <title>Player&#039;s Handbook | Dungeons &amp; Dragons</title>
+
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://dnd.wizards.com/sites/default/files/media/favicon_0.ico" />
+  <link rel="apple-touch-icon-precomposed" href="sites/all/themes/dx/icons/touch-icon-57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="sites/all/themes/dx/icons/touch-icon-72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="sites/all/themes/dx/icons/touch-icon-114.png" />
+
+  <style type="text/css" media="all">
+@import url("http://dnd.wizards.com/modules/system/system.base.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/system/system.menus.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/system/system.messages.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/system/system.theme.css?p0k4d8");
+</style>
+<style type="text/css" media="all">
+@import url("http://dnd.wizards.com/modules/comment/comment.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/date/date_api/date.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/date/date_popup/themes/datepicker.1.7.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/field/theme/field.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/node/node.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/search/search.css?p0k4d8");
+@import url("http://dnd.wizards.com/modules/user/user.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/views/css/views.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/ckeditor/css/ckeditor.css?p0k4d8");
+</style>
+<style type="text/css" media="all">
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/ctools/css/ctools.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/modules/custom/dx1_performance/wiz_image_optimization/css/wiz_image_optimization.css?p0k4d8");
+</style>
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#sliding-popup.sliding-popup-bottom{background:#333333;}#sliding-popup .popup-content #popup-text h2,#sliding-popup .popup-content #popup-text p{color:#ffffff !important;}
+
+/*]]>*/-->
+</style>
+<style type="text/css" media="all">
+@import url("http://dnd.wizards.com/sites/all/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?p0k4d8");
+</style>
+<style type="text/css" media="all">
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/owl.carousel.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/core.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/menu.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/footer.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/submenu.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/medias-gallery.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/jquery.fancybox.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/jquery.fancybox-buttons.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/styles-extended.css?p0k4d8");
+</style>
+<style type="text/css" media="all">
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/products.css?p0k4d8");
+@import url("http://dnd.wizards.com/sites/all/themes/dx/css/drupal.css?p0k4d8");
+</style>
+  <script type="text/javascript" src="http://dnd.wizards.com/sites/all/modules/contrib/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.migrateMute=true;jQuery.migrateTrace=false;
+//--><!]]>
+</script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.jQuery && window.jQuery.migrateWarnings || document.write("<script src='/sites/all/modules/contrib/jquery_update/replace/jquery-migrate/1.2.1/jquery-migrate.min.js'>\x3C/script>")
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://dnd.wizards.com/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/misc/drupal.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/modules/contrib/wiz_deletecookies/js/deletecookies.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/modules/contrib/wiz_deletecookies/js/jquery.cookie.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/modules/custom/dx1_performance/wiz_image_optimization/js/wiz_image_optimization.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/country_cdn.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/core.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/owl.carousel.min.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/jquery.carouFredSel-6.2.1.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/jquery.touchSwipe.min.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/content-gallery-grid/grid.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/content-gallery-grid/modernizr.custom.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/stacktable.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/jquery.fancybox.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/helpers/jquery.fancybox-buttons.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/lib/jquery.unveil.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/drupal.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/GeoBlocker.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/ArticleShare.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/AudioPlayer_v2.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/interstitials.js?p0k4d8"></script>
+<script type="text/javascript" src="http://dnd.wizards.com/sites/all/themes/dx/js/MainMenu.js?p0k4d8"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"dx","theme_token":"M5kpoza7MM5cjIPqGmfCnsf_JFuvCYxbDDttrq647f4","js":{"sites\/all\/modules\/contrib\/eu_cookie_compliance\/js\/eu_cookie_compliance.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"0":1,"\/\/code.jquery.com\/jquery-migrate-1.2.1.min.js":1,"1":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/wiz_deletecookies\/js\/deletecookies.js":1,"sites\/all\/modules\/contrib\/wiz_deletecookies\/js\/jquery.cookie.js":1,"sites\/all\/modules\/custom\/dx1_performance\/wiz_image_optimization\/js\/wiz_image_optimization.js":1,"sites\/all\/themes\/dx\/js\/country_cdn.js":1,"sites\/all\/themes\/dx\/js\/core.js":1,"sites\/all\/themes\/dx\/js\/lib\/owl.carousel.min.js":1,"sites\/all\/themes\/dx\/js\/lib\/jquery.carouFredSel-6.2.1.js":1,"sites\/all\/themes\/dx\/js\/lib\/jquery.touchSwipe.min.js":1,"sites\/all\/themes\/dx\/js\/lib\/content-gallery-grid\/grid.js":1,"sites\/all\/themes\/dx\/js\/lib\/content-gallery-grid\/modernizr.custom.js":1,"sites\/all\/themes\/dx\/js\/lib\/stacktable.js":1,"sites\/all\/themes\/dx\/js\/lib\/jquery.fancybox.js":1,"sites\/all\/themes\/dx\/js\/lib\/helpers\/jquery.fancybox-buttons.js":1,"sites\/all\/themes\/dx\/js\/lib\/jquery.unveil.js":1,"sites\/all\/themes\/dx\/js\/drupal.js":1,"sites\/all\/themes\/dx\/js\/GeoBlocker.js":1,"sites\/all\/themes\/dx\/js\/ArticleShare.js":1,"sites\/all\/themes\/dx\/js\/AudioPlayer_v2.js":1,"sites\/all\/themes\/dx\/js\/interstitials.js":1,"sites\/all\/themes\/dx\/js\/MainMenu.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/custom\/dx1_howtoplay\/css\/core.css":1,"sites\/all\/modules\/custom\/dx1_howtoplaydm\/css\/core.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom\/dx1_performance\/wiz_image_optimization\/css\/wiz_image_optimization.css":1,"0":1,"sites\/all\/modules\/contrib\/eu_cookie_compliance\/css\/eu_cookie_compliance.css":1,"sites\/all\/themes\/dx\/css\/owl.carousel.css":1,"sites\/all\/themes\/dx\/css\/core.css":1,"sites\/all\/themes\/dx\/css\/menu.css":1,"sites\/all\/themes\/dx\/css\/footer.css":1,"sites\/all\/themes\/dx\/css\/submenu.css":1,"sites\/all\/themes\/dx\/css\/medias-gallery.css":1,"sites\/all\/themes\/dx\/css\/jquery.fancybox.css":1,"sites\/all\/themes\/dx\/css\/jquery.fancybox-buttons.css":1,"sites\/all\/themes\/dx\/css\/styles-extended.css":1,"sites\/all\/themes\/dx\/css\/products.css":1,"sites\/all\/themes\/dx\/css\/drupal.css":1}},"urlIsAjaxTrusted":{"\/search\/site":true},"eu_cookie_compliance":{"popup_enabled":1,"popup_agreed_enabled":0,"popup_hide_agreed":0,"popup_clicking_confirmation":1,"popup_html_info":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content info\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EWe use cookies on this site to enhance your user experience.\u003C\/p\u003E\n\u003Cp\u003EBy clicking Yes, I agree you are giving your consent for us to set cookies. (\u003Ca href=\u0022http:\/\/company.wizards.com\/policies\/web\/cookie\u0022 target=\u0022_blank\u0022 style=\u0022color: #2E9AFE\u0022\u003ELearn more about cookies\u003C\/a\u003E)\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button\u0022\u003EYes, I agree\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022\u003ENo, I want to find out more\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E\n","popup_html_agreed":"\u003Cdiv\u003E\n  \u003Cdiv class =\u0022popup-content agreed\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022\u003E\n      \u003Cp\u003EThank you for accepting cookies.\u003C\/p\u003E\n\u003Cp\u003EYou can now hide this message or find out more about cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022hide-popup-button\u0022\u003EHide\u003C\/button\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button\u0022 \u003EMore info\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy","popup_link_new_window":1,"popup_position":null,"popup_language":"en","domain":""}});
+//--><!]]>
+</script>
+  <!--[if lt IE 9]>
+    <script>
+      ark.createHTML5Tags();
+    </script>
+    <![endif]-->
+    <script src="https://apis.google.com/js/client.js?onload=googleClientApiLoad"></script>
+    <script src="http://www.youtube.com/iframe_api"></script>
+
+    <!-- Google Analytics -->
+    <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-15020098-16']);
+        _gaq.push(['_setDomainName', 'wizards.com']);
+        _gaq.push(['_trackPageview']);
+        (function(){ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"551476",ustr:"",originlat:"0",clientrtt:"27",ghostip:"23.215.60.59",ipv6:false,pct:"10",clientip:"152.78.0.136",requestid:"369a5c2",region:"20839",protocol:"",blver:13,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"369a5c2",ai:"358905",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+<body class="html not-front not-logged-in no-sidebars page-node page-node- page-node-1881 node-type-tabletopgame product_tabletop-games_basic-rules product_tabletop-games_basic-rules" >
+  <script>
+  /* Interstitials variables */
+  var Interstitials = {
+    list: [
+                        ]
+  };
+  </script>
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<div id="viewport">
+    <div id="viewport-content">
+        <div id="page" class="page loaded product product_catalog details" >
+
+            <!-- Header -->
+                              <div class="region region-header">
+    <div id="block-dx1-common-blocks-block-dx1-common-blocks-header" class="block block-dx1-common-blocks">
+
+    
+  <div class="content">
+    
+<header>
+    <div class="page-width">
+        <a href="/" class="home">Dungeons &amp; Dragons</a>
+
+        <nav id="menu">
+                            <p class="menu-bar"><span id="menu-button"></span><span class="label">Menu</span></p>
+                <ul><li id="mn_new-to-dd" class="has-children expanded " ><span class="accordion-icon"><span></span></span><a href="/dungeons-and-dragons" >New to D&D</a><ul class="panel"><li id="mn_-dungeons-and-dragons-what-is-dd" class="has-children expanded " ><span class="accordion-icon"><span></span></span><a href="/dungeons-and-dragons/what-is-dd" >What is D&D?</a><ul><li id="mn_-dungeons-and-dragons-what-is-dd"  ><a href="/dungeons-and-dragons/what-is-dd" >Overview</a></li><li id="mn_-dungeons-and-dragons-what-is-dd-races"  ><a href="/dungeons-and-dragons/what-is-dd/races" >Races</a></li><li id="mn_-dungeons-and-dragons-what-is-dd-classes"  ><a href="/dungeons-and-dragons/what-is-dd/classes" >Classes</a></li><li id="mn_-dungeons-and-dragons-what-is-dd-monsters"  ><a href="/dungeons-and-dragons/what-is-dd/monsters" >Monsters</a></li><li id="mn_-dungeons-and-dragons-story-factions"  ><a href="/dungeons-and-dragons/story/factions" >Factions</a></li></ul></li><li id="mn_-dungeons-and-dragons-start-playing" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/dungeons-and-dragons/start-playing" >Start Playing</a><ul><li id="mn_-products-catalog-digital-games"  ><a href="/products/catalog/digital-games" >Digital Games</a></li><li id="mn_-products-legendary-fantasy-gaming"  ><a href="/products/legendary-fantasy-gaming" >Tabletop Games</a></li></ul></li></ul></li><li id="mn_product" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/story/tombofannihilation" >Story</a><ul class="panel"><li id="mn_-story-tombofannihilation" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/story/tombofannihilation" >Current Story</a><ul><li id="mn_-story-tombofannihilation"  ><a href="/story/tombofannihilation" >Tomb of Annihilation</a></li></ul></li><li id="mn_-dungeons-and-dragons-story-curse-of-strahd" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/dungeons-and-dragons/story/curse-of-strahd" >Archive</a><ul><li id="mn_-dungeons-and-dragons-story-curse-of-strahd"  ><a href="/dungeons-and-dragons/story/curse-of-strahd" >Curse of Strahd</a></li><li id="mn_-dungeons-and-dragons-story-rage-of-demons"  ><a href="/dungeons-and-dragons/story/rage-of-demons" >Rage of Demons</a></li><li id="mn_-products-elemental-evil"  ><a href="/products/elemental-evil" >Elemental Evil </a></li><li id="mn_-dungeons-and-dragons-story-tyrannyofdragons"  ><a href="/dungeons-and-dragons/story/tyrannyofdragons" >Tyranny of Dragons</a></li><li id="mn_-dungeons-and-dragons-story-storm-kings-thunder"  ><a href="/dungeons-and-dragons/story/storm-kings-thunder" >Storm King's Thunder</a></li></ul></li><li id="mn_-lore" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/lore" >Lore</a><ul><li id="mn_-dungeons-and-dragons-story-heroes"  ><a href="/dungeons-and-dragons/story/heroes" >Heroes</a></li><li id="mn_-dungeons-and-dragons-story-curse-of-strahd-villains"  ><a href="/dungeons-and-dragons/story/curse-of-strahd/villains" >Villains</a></li><li id="mn_-dungeons-and-dragons-what-is-dd-forgotten-realms"  ><a href="/dungeons-and-dragons/what-is-dd/forgotten-realms" >Locations</a></li></ul></li></ul></li><li id="mn_play-events" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/products/catalog" >Products</a><ul class="panel"><li id="mn_-products-catalog"  ><a href="/products/catalog" >All Products</a></li><li id="mn_-products-catalog-digital-games" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/products/catalog/digital-games" >Digital Games</a><ul><li id="mn_-products-digital-games-pcmac"  ><a href="/products/digital-games/pcmac" >PC/Mac</a></li><li id="mn_-products-digital-games-console"  ><a href="/products/digital-games/console" >Console Games</a></li><li id="mn_-products-digital-games-mobiletablet"  ><a href="/products/digital-games/mobiletablet" >Mobile and Tablet</a></li></ul></li><li id="mn_-products-catalog-tabletop-games" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/products/catalog/tabletop-games" >Tabletop Games</a><ul><li id="mn_-products-tabletop-games-rpg-products"  ><a href="/products/tabletop-games/rpg-products" >Tabletop RPGs</a></li><li id="mn_-products-tabletop-games-miniatures"  ><a href="/products/tabletop-games/miniatures" >Miniatures</a></li><li id="mn_-products-tabletop-games-board-card-games"  ><a href="/products/tabletop-games/board-card-games" >Board & Card Games</a></li></ul></li><li id="mn_-products-fiction-novels" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/products/fiction/novels" >Fiction</a><ul><li id="mn_-products-fiction-novels"  ><a href="/products/fiction/novels" >Novels</a></li><li id="mn_-products-fiction-comicsgraphic-novels"  ><a href="/products/fiction/comicsgraphic-novels" >Comics/Graphic Novels</a></li></ul></li><li id="mn_-products-merchandise"  ><a href="/products/merchandise" >Accessories</a></li><li id="mn_-content-dragon"  ><a href="/content/dragon" >Dragon+ App</a></li><li id="mn_-products-tabletop-games-trpg-resources" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/products/tabletop-games/trpg-resources" >Resources</a><ul><li id="mn_-articles-features-character-sheets"  ><a href="/articles/features/character_sheets" >Character Sheets</a></li><li id="mn_-articles-features-basicrules"  ><a href="/articles/features/basicrules" >Basic Rules</a></li><li id="mn_-digital-tools"  ><a href="/digital_tools" >Digital Tools</a></li><li id="mn_http-dnd-wizards-com-articles-news-dungeon-masters-guild-now-open"  ><a href="http://dnd.wizards.com/articles/news/dungeon-masters-guild-now-open" target="_blank">DM's Guild</a></li></ul></li></ul></li><li id="mn_articles" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/playevents" >Events</a><ul class="panel"><li id="mn_-playevents-organized-play"  ><a href="/playevents/organized-play" >Adventurers League</a></li><li id="mn_-playevents-gather-together"  ><a href="/playevents/gather-together" >Conventions</a></li><li id="mn_http-locator-wizards-com-brand-dnd"  ><a href="http://locator.wizards.com/#brand=dnd" target="_blank">Store & Event Locator</a></li></ul></li><li id="mn_community" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/articles" >Articles</a><ul class="panel"><li id="mn_-articles" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/articles" >All articles</a><ul><li id="mn_-articles-news"  ><a href="/articles/news" >News</a></li><li id="mn_-articles-events"  ><a href="/articles/events" >Events</a></li><li id="mn_-articles-features"  ><a href="/articles/features" >Features</a></li><li id="mn_-articles-sage-advice"  ><a href="/articles/sage-advice" >Sage Advice</a></li><li id="mn_-articles-unearthed-arcana"  ><a href="/articles/unearthed-arcana" >Unearthed Arcana</a></li></ul></li><li id="mn_-podcast-hub"  ><a href="/podcast-hub" >Podcasts</a></li><li id="mn_-articles-events-dd-twitch" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/articles/events/dd-twitch" >Livestreams</a><ul><li id="mn_-articles-events-dd-twitch"  ><a href="/articles/events/dd-twitch" >Schedule</a></li><li id="mn_-articles-news-new-weekly-dd-stream-chris-perkins"  ><a href="/articles/news/new-weekly-dd-stream-chris-perkins" >Dice, Camera, Action!</a></li><li id="mn_-articles-events-dragon-talk"  ><a href="/articles/events/dragon-talk" >Dragon Talk</a></li><li id="mn_-articles-events-dragon-livestream"  ><a href="/articles/events/dragon-livestream" >Dragon+ Stream</a></li><li id="mn_-articles-events-fireside-chat"  ><a href="/articles/events/fireside-chat" >Fireside Chat</a></li><li id="mn_-articles-events-happy-fun-hour"  ><a href="/articles/events/happy-fun-hour" >Happy Fun Hour</a></li></ul></li><li id="mn_-articles-media-resources" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/articles/media-resources" >Media</a><ul><li id="mn_-articles-media-resources-wallpapers"  ><a href="/articles/media-resources/wallpapers" >Wallpaper</a></li><li id="mn_-articles-media-resources-comics"  ><a href="/articles/media-resources/comics" >Comics</a></li><li id="mn_-articles-media-resources-videos"  ><a href="/articles/media-resources/videos" >Videos</a></li><li id="mn_-articles-features-fan-site-kit"  ><a href="/articles/features/fan-site-kit" >Fan Site Kit</a></li></ul></li><li id="mn_-content-dragon"  ><a href="/content/dragon" >Dragon+</a></li></ul></li><li id="mn_-community" class="has-children  " ><span class="accordion-icon"><span></span></span><a href="/community" >Community</a><ul class="panel"><li id="mn_https-www-facebook-com-dungeonsanddragons"  ><a href="https://www.facebook.com/dungeonsanddragons" target="_blank">Facebook</a></li><li id="mn_https-twitter-com-izards-n-"  ><a href="https://twitter.com/Wizards_DnD" target="_blank">Twitter</a></li><li id="mn_http-dndwizards-tumblr-com"  ><a href="http://dndwizards.tumblr.com" target="_blank">Tumblr</a></li><li id="mn_https-www-youtube-com-user-izards"  ><a href="https://www.youtube.com/user/DNDWizards" target="_blank">YouTube</a></li><li id="mn_https-www-twitch-tv-dnd"  ><a href="https://www.twitch.tv/dnd" target="_blank">Twitch</a></li></ul></li></ul>            
+        </nav>
+
+        <div class="utils">
+            <a href="http://locator.wizards.com/#brand=dnd" class="locator" target="_blank">Locator</a>
+            <form action="/search/site" method="post" id="search-form-mini" accept-charset="UTF-8"><div><div class="form"><div class="form-item form-type-textfield form-item-keys">
+ <input placeholder="Search for anything" type="text" id="edit-keys" name="keys" value="" size="60" maxlength="128" class="form-text" />
+</div>
+</div><input class="element-invisible form-submit" type="submit" id="edit-submit" name="op" value="" /><input type="hidden" name="form_build_id" value="form-iyBlXzwqgsqQauT4xXE6WaOem9i3gaXOGXux7pT-jPk" />
+<input type="hidden" name="form_id" value="search_form_mini" />
+</div></form>            <a href="/search/site" id="search-form-button">Search</a>
+
+                          <div class="header-social-media">
+                                                      <a class="facebook"
+                       href="https://www.facebook.com/dungeonsanddragons"
+                       target="_blank"
+                                           >Facebook</a>
+                                                                        <a class="twitter"
+                       href="https://twitter.com/Wizards_DnD"
+                       target="_blank"
+                                           >Twitter</a>
+                                                                        <a class="youtube"
+                       href="https://www.youtube.com/user/DNDWizards"
+                       target="_blank"
+                                           >Youtube</a>
+                                                                        <a class="tumblr"
+                       href="http://dndwizards.tumblr.com"
+                       target="_blank"
+                                           >Tumblr</a>
+                                                                        <a class="twitch"
+                       href="https://www.twitch.tv/dnd"
+                       target="_blank"
+                                           >Twitch</a>
+                                                                        <a class="instagram"
+                       href="https://www.instagram.com/dndwizards"
+                       target="_blank"
+                       style='background-image: url(24291)'                    >Instagram</a>
+                                                </div>
+                    </div>
+    </div>
+
+    <hr />
+</header>  </div>
+</div>
+  </div>
+                        
+            <!-- Messages : Notice, Warning, Error -->
+
+            
+            <!-- Tab action links block -->
+
+                            <div class="tabs"></div>
+            
+            <!-- Message help -->
+
+            
+            <!-- Backend action links -->
+
+            
+            <!-- Dynamic content -->
+
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    
+<!-- Page Header -->
+<div id="page-header">
+            <img src="http://dnd.wizards.com/sites/default/files/media/styles/story_banner/public/images/head-banner/04-PRODUCT-INFO_Tabletop_Hero_PHB.jpg?itok=TGsc04Ek" alt="Player&#039;s Handbook" />
+      <div class="page-width">
+	
+					<div class="intro">
+				<h1>
+					<span class="first-line">Player's Handbook</span>
+											<span>A Dungeons & Dragons Core Rulebook </span>
+														</h1>
+			</div>
+		    </div>
+        <div id="wrapper-form">
+        <div class="form-red inbox">
+            <div class="title-with-image">
+                <span class="locator"></span>
+                <h5>Find a store near you</h5>
+            </div>
+            <div class="column country">
+                <label for="where-to-buy-country">Country</label>
+                <div class="select-wrapper">
+                    <select id="where-to-buy-country">
+                        <option value="US">United States</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column zip-code">
+                <label for="txtWizardsModuleWidgetSearch">ZIP Code</label>
+                <input class="where-to-buy-zipcode" type="text" size="10" maxlength="10" placeholder="ZIP Code" id="txtWizardsModuleWidgetSearch"/>
+            </div>
+            <div class="column actions">
+                <button type="button" class="action-button" onclick="javascript: AddSearchTerm()">Find Now!</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Content -->
+
+<div id="content" class="page-width">
+
+    <article class="intro">
+
+        
+<div class="article-share top">
+	<div>
+		<h6>Share this</h6>
+		<p>
+			<a class="facebook" href="http://www.facebook.com/sharer.php?m2w&u=http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook&amp;t=Player&#039;s Handbook" target="_blank" data-label="Share"><span>Share on Facebook</span></a>
+			<a class="twitter" href="https://twitter.com/share?url=http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook&amp;text=Player&#039;s Handbook" target="_blank" data-label="Share"><span>Share on Twitter</span></a>
+			<a class="google" href="https://plus.google.com/share?url=http://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" target="_blank" data-label="Share"><span>Share on Google+</span></a>
+		</p>
+	</div>
+</div>        <h2 class="with-social">Product overview</h2>
+    </article>
+
+    <div class="overview">
+        <!-- block left -->
+        <div class="col-left">
+            <img src="http://dnd.wizards.com/sites/default/files/media/styles/product_tabletop_left/public/images/product/DnD_PHB.png?itok=CoLYU1TV" alt="Player&#039;s Handbook"/>
+                    </div>
+        <!-- block center -->
+        <div class="col-right">
+                                            <p><strong>Everything a player needs to create heroic characters for the world’s greatest roleplaying game.</strong></p>
+<p>The Player’s Handbook is the essential reference for every Dungeons &amp; Dragons roleplayer. It contains rules for character creation and advancement, backgrounds and skills, exploration and combat, equipment, spells, and much more. Use this book to create exciting characters from among the most iconic D&amp;D races and classes.</p>
+<p>Dungeons &amp; Dragons immerses you in a world of adventure. Explore ancient ruins and deadly dungeons. Battle monsters while searching for legendary treasures. Gain experience and power as you trek across uncharted lands with your companions.</p>
+<p>The world needs heroes. Will you answer the call?</p>
+            
+            <h3>Item details</h3>
+            <p>
+                                    <strong>Price:</strong> $49.95                    C$57.00                    <br>
+                                                                  <strong>Release Date: </strong>
+                                      19 August, 2014                                    <br>
+                                                    <strong>Format:</strong> Hardcover<br>
+                                                            </p>
+            <h3 style="line-height: 20px;">
+	Where can I buy it?</h3>
+<p>Purchase it at your&nbsp;<a href="http://locator.wizards.com/#brand=dnd">local game store</a>, book stores such as Barnes &amp; Noble, or online at retailers like <a href="http://www.amazon.com/Players-Handbook-Dungeons-Dragons-Wizards/dp/0786965606">Amazon</a>.</p>
+<p>You can also find the Player's Handbook&nbsp;available via&nbsp;<a href="https://www.fantasygrounds.com/store/product.xcp?id=WOTC5EPHBDELUXE&amp;utm_medium=productlink&amp;utm_campaign=dnd" target="_blank">Fantasy Grounds</a>,&nbsp;<a href="http://store.steampowered.com/app/360090" target="_blank">Steam</a>&nbsp;and at <a href="https://www.dndbeyond.com/marketplace/source/2" target="_blank">D&amp;D Beyond</a>.</p>
+<h3>
+	Awards</h3>
+<figure class="caption" style="float:right">
+	<img alt="" src="http://media.wizards.com/2015/images/dnd/products/ennies-2015.png" /></figure>
+<p><strong>ENnie Awards:</strong><br />
+	The winners of the 2015 ENnie Awards, an annual fan-based celebration of excellence in tabletop roleplaying gaming, were announced at this year's Gen Con.</p>
+<ul>
+	<li>
+		<strong>Winner (Gold): Product of the Year:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+	<li>
+		<strong>Winner (Gold): Best Game:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+	<li>
+		<strong>Winner (Gold): Best Rules:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+	<li>
+		<strong>Winner (Silver): Writing:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+	<li>
+		<strong><strong><strong>Winner (Gold): Best Electronic Book:</strong> </strong></strong>Dungeons &amp; Dragons (Basic Rules)</li>
+	<li>
+		<strong>Winner (Gold): Free Product:</strong> Dungeons &amp; Dragons (Basic Rules)</li>
+	<li>
+		<strong>Winner (Gold): Fan's Choice for Best Publisher:</strong> Wizards of the Coast</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<figure class="caption" style="float:right">
+	<img alt="" src="http://media.wizards.com/2015/images/dnd/products/Award_Origins_sm.png" /></figure>
+<p><strong>Origins Awards:</strong><br />
+	The winners of the 2015 Origins Awards were selected by the Academy of Adventure Gaming Arts &amp; Design, presented at the Origins Game Fair in Columbus, Ohio.</p>
+<ul>
+	<li>
+		<strong>Winner: Best Role Playing Game:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+	<li>
+		<strong>Winner: Fan Favorites:<strong> Best Role Playing Game:&nbsp;</strong></strong>Dungeons &amp; Dragons (Player's Handbook)</li>
+</ul>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<figure class="caption" style="float:right">
+	<img alt="" src="http://media.wizards.com/2015/images/dnd/products/Awards_GoldenGeek_sm.png" /></figure>
+<p><strong>Golden Geek:</strong><br />
+	The winners of the 2014 Golden Geek Awards have been determined by the users of BoardGameGeek, RPGGeek, and VideoGameGeek.</p>
+<ul>
+	<li>
+		<strong>Winner: Game of the Year:</strong> Dungeons &amp; Dragons (5th Edition)</li>
+	<li>
+		<strong>Winner: Best Artwork and Presentation:</strong> Dungeons &amp; Dragons (Player's Handbook)</li>
+</ul>
+            
+
+                                                                                                                        <p>
+                                <a href="http://media.wizards.com/2016/downloads/DND/PH-Errata-V1.pdf" class="cta-button pdf" target="_blank">
+                                    Player's Handbook Errata v.1.0                                </a>
+                            </p>
+                                                                                            </div>
+    </div>
+
+
+    <div class="promo-box">
+                
+<div class="box product right with-stores-buttons">
+        <div class="promo-product">
+        <img src="http://dnd.wizards.com/sites/default/files/media/styles/inline_blocks/public/images/inline-block/D18_Left_Inline_Block.jpg?itok=SARHn5-o" alt="Dragon+"/>
+    </div>
+    <div class="content">
+        <h2>
+                                        <span class="first-line">
+                    Latest Issue                </span>
+                                        <span >
+                    Dragon+                </span>
+                    </h2>
+        <div class="text">
+            
+            <p>Your free, official mobile source for all-things Dungeons &amp; Dragons!
+</p>
+        </div>
+                                      <div class="stores-buttons">
+                                    <a class="store-btn" href="https://itunes.apple.com/us/app/dragon+/id981727811?mt=8"
+                                          style="background: url(http://dnd.wizards.com/sites/default/files/media/images/link/Download_on_the_App_Store_Badge_US-UK_135x40.svg) center center no-repeat;"
+                    
+                                        >
+                        App Store                    </a>
+                                    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.wizards.dragonplus"
+                                          style="background: url(http://dnd.wizards.com/sites/default/files/media/images/link/en_badge_web_generic.svg) center center no-repeat;"
+                    
+                    target="_blank"                    >
+                        Google Play                    </a>
+                                    <a class="store-btn" href="http://www.dragonmag.com"
+                                          style="background: url(http://dnd.wizards.com/sites/default/files/media/images/link/read-on-the-web.png) center center no-repeat;"
+                    
+                    target="_blank"                    >
+                        Web                    </a>
+                            </div>
+                      </div>
+</div>              
+<div class="box product left">
+        <div class="promo-product">
+        <img src="http://dnd.wizards.com/sites/default/files/media/styles/inline_blocks/public/images/inline-block/InlineR_Ampersand.jpg?itok=v8_w9WXL" alt="Basic Rules for D&amp;D"/>
+    </div>
+    <div class="content">
+        <h2>
+                                        <span class="first-line">
+                    New to the Tabletop Game                </span>
+                                        <span >
+                    Basic Rules for the TRPG                </span>
+                    </h2>
+        <div class="text">
+            
+            <p>The Basic Rules for Dungeons &amp; Dragons is a PDF that covers the core of the tabletop game.
+</p>
+        </div>
+                                                        <p>
+                  <a class="cta-button"
+                     href="/articles/features/basicrules"
+                                        >
+                    Download the Rules                  </a>
+                </p>
+                                    </div>
+</div>        </div><div class="subscribe-podcast-blocks">
+	</div><div class="main-content books">
+    <div class="header">
+        <h3>Related products</h3>
+        <p class="all"><a href="/products/catalog">All D&D products</a></p>
+    </div>
+    <div class="articles">
+        <article>
+    <div class="wrap">
+        <div class="product-image">
+            <a href="/products/tabletop-games/rpg-products/rpg_starterset" class="image">
+                                    <img src="http://dnd.wizards.com/sites/default/files/media/styles/products_thumbnail/public/images/product/DnD_StarterBoxTH.png?itok=ZnQrsCy2" alt="D&amp;D Starter Set"/>
+                            </a>
+        </div>
+        <div class="book-info">
+            <h4><a href="/products/tabletop-games/rpg-products/rpg_starterset">D&D Starter Set</a></h4>
+                            <p class="category"><a href="/products/tabletop-games/rpg-products/rpg_starterset">Fantasy Roleplaying Tabletop Game</a></p>
+                                                    <p class="price-date"><a href="/products/tabletop-games/rpg-products/rpg_starterset"><strong>Price</strong>: $19.99</a></p>
+                                      <p class="price-date">
+                <a href="/products/tabletop-games/rpg-products/rpg_starterset">
+                  <strong>Release Date</strong>:
+                                      15 July, 2014                                  </a>
+              </p>
+                        <p class="actions"><a href="/products/tabletop-games/rpg-products/rpg_starterset" class="cta-button">See Details</a></p>
+        </div>
+    </div>
+</article><article>
+    <div class="wrap">
+        <div class="product-image">
+            <a href="/products/tabletop-games/rpg-products/rpg_playershandbook" class="image">
+                                    <img src="http://dnd.wizards.com/sites/default/files/media/styles/products_thumbnail/public/images/product/DnD_PHBTH.png?itok=im-p8-B8" alt="Player&#039;s Handbook"/>
+                            </a>
+        </div>
+        <div class="book-info">
+            <h4><a href="/products/tabletop-games/rpg-products/rpg_playershandbook">Player's Handbook</a></h4>
+                            <p class="category"><a href="/products/tabletop-games/rpg-products/rpg_playershandbook">A Dungeons & Dragons Core Rulebook</a></p>
+                                                    <p class="price-date"><a href="/products/tabletop-games/rpg-products/rpg_playershandbook"><strong>Price</strong>: $49.95</a></p>
+                                      <p class="price-date">
+                <a href="/products/tabletop-games/rpg-products/rpg_playershandbook">
+                  <strong>Release Date</strong>:
+                                      19 August, 2014                                  </a>
+              </p>
+                        <p class="actions"><a href="/products/tabletop-games/rpg-products/rpg_playershandbook" class="cta-button">See Details</a></p>
+        </div>
+    </div>
+</article><article>
+    <div class="wrap">
+        <div class="product-image">
+            <a href="/products/tabletop-games/rpg-products/monster-manual" class="image">
+                                    <img src="http://dnd.wizards.com/sites/default/files/media/styles/products_thumbnail/public/images/product/DnD_TH_MonsterManual.png?itok=FcuDUum6" alt="Monster Manual"/>
+                            </a>
+        </div>
+        <div class="book-info">
+            <h4><a href="/products/tabletop-games/rpg-products/monster-manual">Monster Manual</a></h4>
+                            <p class="category"><a href="/products/tabletop-games/rpg-products/monster-manual">A Dungeons & Dragons Core Rulebook</a></p>
+                                                    <p class="price-date"><a href="/products/tabletop-games/rpg-products/monster-manual"><strong>Price</strong>: $49.95</a></p>
+                                      <p class="price-date">
+                <a href="/products/tabletop-games/rpg-products/monster-manual">
+                  <strong>Release Date</strong>:
+                                      30 September, 2014                                  </a>
+              </p>
+                        <p class="actions"><a href="/products/tabletop-games/rpg-products/monster-manual" class="cta-button">See Details</a></p>
+        </div>
+    </div>
+</article><article>
+    <div class="wrap">
+        <div class="product-image">
+            <a href="/products/tabletop-games/rpg-products/dungeon-masters-guide" class="image">
+                                    <img src="http://dnd.wizards.com/sites/default/files/media/styles/products_thumbnail/public/images/product/DnD_TH_DMG.png?itok=Eu5ZJzun" alt="Dungeon Master&#039;s Guide"/>
+                            </a>
+        </div>
+        <div class="book-info">
+            <h4><a href="/products/tabletop-games/rpg-products/dungeon-masters-guide">Dungeon Master's Guide</a></h4>
+                            <p class="category"><a href="/products/tabletop-games/rpg-products/dungeon-masters-guide">A Dungeons & Dragons Core Rulebook</a></p>
+                                                    <p class="price-date"><a href="/products/tabletop-games/rpg-products/dungeon-masters-guide"><strong>Price</strong>: $49.95</a></p>
+                                      <p class="price-date">
+                <a href="/products/tabletop-games/rpg-products/dungeon-masters-guide">
+                  <strong>Release Date</strong>:
+                                      09 December, 2014                                  </a>
+              </p>
+                        <p class="actions"><a href="/products/tabletop-games/rpg-products/dungeon-masters-guide" class="cta-button">See Details</a></p>
+        </div>
+    </div>
+</article>    </div>
+</div>
+
+
+    <div class="page-end"></div>
+</div>  </div>
+</div>
+  </div>
+        </div>
+
+        <!-- Footer -->
+                      <div class="region region-footer">
+    <div id="block-dx1-common-blocks-block-dx1-common-blocks-footer" class="block block-dx1-common-blocks">
+
+    
+  <div class="content">
+    
+<footer>
+    <div id="back-to-top"><a href="#page">Back to top</a></div>
+    <div id="where-to-buy">
+        <div class="page-width">
+            <div class="intro">
+                <div class="wrap">
+                    <h5>Where to <strong>Play</strong> and <strong>Buy</strong></h5>
+                    <p>Find a location to buy and play Dungeons & Dragons near you.</p>
+                </div>
+            </div>
+
+            <div class="form">
+                <div class="wrap">
+								<span class="column">
+									<label for="where-to-buy-country">Country</label>
+									<span class="select-wrapper">
+										<select id="where-to-buy-country">
+                                            <option value="US">United States</option>
+                                        </select>
+									</span>
+								</span>
+
+								<span class="column zip-code">
+									<label for="txtWizardsModuleWidgetSearch">ZIP Code</label>
+                                    <input class="where-to-buy-zipcode" type="text" size="10" maxlength="10" placeholder="ZIP Code" id="txtWizardsModuleWidgetSearch"/>
+								</span>
+
+								<span class="column actions">
+									<button type="button" class="action-button" onclick="javascript: AddSearchTerm()">Find Now!</button>
+								</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="main-footer">
+        <div class="page-width">
+            <div class="text">
+                <!--<div id="locale-select">
+                    <label for="locale-select-ddl">Select your language:</label>
+                    <div class="select-wrapper">
+                        <select id="locale-select-ddl">
+                            <option value="en-US">English - US</option>
+                        </select>
+                    </div>
+                </div>-->
+
+                    <p class="brand-family-title">Wizards brand family:</p>
+                    <p class="brand-family-menu">
+                        <a href="https://magic.wizards.com" target="_blank">Magic</a><span class="separator"> | </span><a href="http://dnd.wizards.com" target="_blank">D&D</a><span class="separator"> | </span><a href="http://wpn.wizards.com/" target="_blank">wpn</a><span class="separator"> | </span><a href="http://dm.takaratomy.co.jp/" target="_blank">Duel masters</a><span class="separator"> | </span><a href="http://avalonhill.wizards.com/" target="_blank">Avalon hill</a>                    </p>
+                    <p class="terms">
+                        <a href="http://company.wizards.com/tou" target="_blank">Terms of Use</a><span class="separator"> | </span><a href="http://company.wizards.com/policies/web/privacy" target="_blank">Privacy Policy</a><span class="separator"> | </span><a href="http://company.wizards.com/conduct" target="_blank">Code of Conduct</a><span class="separator"> | </span><a href="http://company.wizards.com/policies/web/cookie" target="_blank">Cookies</a><span class="separator"> | </span><a href="http://wizards.custhelp.com/" target="_blank">Customer Service</a>                    </p>
+                <p class="copyright">© 1995-2018 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. All Rights Reserved.</p>
+            </div>
+            <!--menu-footer-sellers-->
+            <p class="logo wizard"><a href="http://company.wizards.com" target="_blank">Wizards of the Coast</a></p><p class="logo hasbro"><a href="http://www.hasbro.com" target="_blank">Hasbro</a></p><p class="logo privacy"><a href="http://www.esrb.org/confirm/wizards-confirmation.jsp" target="_blank">ESRB</a></p>        </div>
+    </div>
+</footer>
+  </div>
+</div>
+  </div>
+        
+    </div>
+</div>
+  <script type="text/javascript" src="http://dnd.wizards.com/sites/all/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.js?p0k4d8"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"574829f0b8","applicationID":"70689639","transactionName":"MVJbMkNUDRcHUEAICggYeAVFXAwKSV1bBQA5R1gBVGoVDQNE","queueTime":0,"applicationTime":247,"atts":"HRVYRAtOHhk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

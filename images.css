@@ -1,0 +1,89 @@
+.dragon{
+  width: 250px;
+  border-radius: 12px;
+  margin-right: 100px;
+  margin left: 10px;
+  float: right;
+}
+
+.fighter{
+  float:right;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  height: 170px;
+  margin-right: 50px;
+}
+
+.container:hover .overlay{
+  opacity: 0.7;
+}
+
+.text {
+  top: 75px;
+  left: 25px;
+  position: absolute;
+  opacity: 1;
+}
+
+.overlay{
+  position: absolute;
+  top: 328px;
+  left: 1211px;
+  width: 250px;
+  height: 170px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.barb{
+  float:left;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  margin-right: 50px;
+  margin-left: 200px;
+  margin-top: 70px;
+}
+
+.bard{
+  float:right;
+  top: 100px;
+  right:100px;
+  border-radius: 10px;
+  width: 250px;
+  margin-right: 50px;
+}
+
+.dice{
+  width:280px;
+  border-radius: 10px;
+  margin-left: 20px;
+  float: right;
+}
+
+.book{
+  width:200px;
+  float: right;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.scroll{
+  width:200px;
+  float: left;
+  margin-right: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.d20{
+  width:200px;
+  float: right;
+  margin-right: 20px;
+  border-radius: 5px;
+}
